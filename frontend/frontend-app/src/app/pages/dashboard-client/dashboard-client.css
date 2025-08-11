@@ -1,0 +1,15 @@
+.dash-layout { display: grid; grid-template-columns: 260px 1fr; min-height: calc(100dvh - 0px); }
+.sidebar { background: #0f172a; color: #e2e8f0; padding: 24px 16px; }
+.brand { font-weight: 700; margin-bottom: 16px; }
+.menu { display: grid; gap: 8px; }
+.menu a { color: #cbd5e1; text-decoration: none; padding: 10px 12px; border-radius: 12px; display: block; }
+.menu a.active, .menu a:hover { background: #1e293b; color: #fff; }
+.content { padding: 24px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .dash-layout { grid-template-columns: 1fr; }
+  .sidebar { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1e293b; }
+  .menu { grid-auto-flow: column; overflow: auto; }
+  .menu a { white-space: nowrap; }
+}

@@ -1,0 +1,14 @@
+<div class="dash-layout">
+  <aside class="sidebar">
+    <div class="brand">👤 Espace Client</div>
+    <nav class="menu">
+      <a routerLink="profile" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Profil</a>
+      <a routerLink="demandes" routerLinkActive="active">Demandes</a>
+      <a routerLink="historiques" routerLinkActive="active">Historiques</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

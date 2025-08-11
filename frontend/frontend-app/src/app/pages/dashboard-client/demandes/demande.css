@@ -1,0 +1,10 @@
+.card { background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:20px; }
+.row { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px; }
+.btn { background:#0f172a; color:#fff; border:none; padding:10px 14px; border-radius:10px; }
+.list { display:grid; gap:10px; }
+.item { display:flex; align-items:center; justify-content:space-between; padding:12px; border:1px solid #e5e7eb; border-radius:12px; }
+.title { font-weight:600; }
+.muted { color:#6b7280; }
+.badge { padding:6px 10px; border-radius:999px; background:#f3f4f6; font-size:12px; }
+.badge.ok { background:#ecfdf5; color:#047857; border:1px solid #10b98133; }
+.status { font-weight:600; }

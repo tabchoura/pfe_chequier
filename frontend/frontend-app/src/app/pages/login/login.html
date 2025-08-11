@@ -1,0 +1,75 @@
+<header class="header">
+  <div class="container header-inner">
+    <div class="brand" routerLink="/">Gestion des Chéquiers</div>
+    <nav class="nav">
+      <a routerLink="/">Accueil</a>
+      <a routerLink="/#about">Qui nous sommes</a>
+      <a routerLink="/#services">Nos services</a>
+      <a routerLink="/#avis">Avis</a>
+      <a routerLink="/#contact">Contact</a>
+      <a routerLink="/login">Se connecter</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-wrapper">
+  <div class="container">
+    <div class="auth-card card glass">
+      <div class="auth-left">
+        <h1>Connectez-vous</h1>
+        <p class="muted">Accédez à votre espace et gérez vos chéquiers en toute sécurité.</p>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" formControlName="email"
+                   [class.invalid]="submitted && emailCtrl?.invalid"
+                   placeholder="vous@email.tn" />
+            <small *ngIf="submitted && emailCtrl?.errors" class="error">
+              {{ emailError }}
+            </small>
+          </label>
+
+          <label class="field">
+            <span>Mot de passe</span>
+            <div class="password-wrap">
+              <input [type]="showPass ? 'text' : 'password'"
+                     formControlName="password"
+                     [class.invalid]="submitted && passCtrl?.invalid"
+                     placeholder="••••••••" />
+              <button type="button" class="toggle" (click)="showPass = !showPass">{{ showPass ? '🙈' : '👁️' }}</button>
+            </div>
+            <small *ngIf="submitted && passCtrl?.errors" class="error">
+              Mot de passe requis (min. 6 caractères).
+            </small>
+          </label>
+
+          <div class="row">
+            <label class="checkbox">
+              <input type="checkbox" formControlName="remember" />
+              <span>Se souvenir de moi</span>
+            </label>
+            <a class="link" routerLink="/forgot">Mot de passe oublié ?</a>
+          </div>
+
+          <button class="btn btn-primary full" type="submit" [disabled]="loading">
+            <span *ngIf="!loading">Se connecter</span>
+            <span *ngIf="loading">Connexion…</span>
+          </button>
+
+          <p class="muted center small">
+            Pas de compte ? <a class="link" routerLink="/register">Créer un compte</a>
+          </p>
+
+          <div *ngIf="serverError" class="server-error">{{ serverError }}</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="muted">© {{ year }} Gestion des Chéquiers</span>
+  </div>
+</footer>

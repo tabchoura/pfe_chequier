@@ -1,0 +1,5 @@
+.card { background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:20px; }
+.table { width:100%; border-collapse: collapse; }
+.table th, .table td { text-align:left; padding:10px; border-bottom:1px solid #e5e7eb; }
+.badge { padding:6px 10px; border-radius:999px; background:#f3f4f6; font-size:12px; }
+.badge.ok { background:#ecfdf5; color:#047857; border:1px solid #10b98133; }
